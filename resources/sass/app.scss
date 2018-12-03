@@ -8,7 +8,18 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.row {
+  padding-bottom: 1rem;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+h1 {
+  padding: 1rem 0;
+}
+
+.movie-details {
+  padding-bottom: 1rem;
 }
