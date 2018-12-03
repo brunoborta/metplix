@@ -12,8 +12,11 @@ class GuzzleHttpRequest
         $this->client = $client;
     }
 
-    protected function get($url, $additionParams = []) {
+    protected function get($url, $page = 1, $additionParams = []) {
         $params = ['api_key' => $this->apiKey];
+        if($page !== 1) {
+            $params = array_merge( ['page' => $page], $params );
+        }
         if(!empty( $additionParams )) {
             $params = array_merge( $additionParams, $params );
         }

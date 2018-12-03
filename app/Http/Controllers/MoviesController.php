@@ -9,19 +9,25 @@ class MoviesController extends Controller
 {
 
     protected $movies;
+    protected $currentPage;
 
-    public function __construct(Movies $movies) {
+    public function __construct(Movies $movies, Request $request) {
         $this->movies = $movies;
+        if($request->query('page') !== null) {
+            $this->currentPage = $request->query('page');
+        } else {
+            $this->currentPage = 1;
+        }
     }
 
     public function index() {
-        $movies = $this->movies->upcoming();
+        $movies = $this->movies->upcoming($this->currentPage);
         return view('movies.index', compact('movies'));
     }
 
     public function search(Request $request) {
-        $movies = $this->movies->search($request->input('query'));
-        return view('movies.search', compact('movies'));
+        $movies = $this->movies->search($this->currentPage, $request->input('query'));
+        return view('movies.search', compact('movies'), ['query' => $request->input('query')]);
     }
 
     public function show($id) {

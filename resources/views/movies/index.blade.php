@@ -21,7 +21,12 @@
         @endforeach
     </div>
     @endforeach
-    
-    @component('components.pagination')
+
+    @component('components.pagination', [
+        'requestType' => '/',
+        'previousPage' => $movies->page - 1,
+        'currentPage' => $movies->page,
+        'nextPage' => $movies->page + 1,
+        'lastPage' => $movies->total_pages])
     @endcomponent
 @stop

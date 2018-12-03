@@ -23,6 +23,6 @@
     </div>
     @endforeach
     
-    @component('components.pagination')
+    @component('components.pagination', ['requestType' => 'search', 'query' => $query, 'movies' => $movies])
     @endcomponent
 @stop
