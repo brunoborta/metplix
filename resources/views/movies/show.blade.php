@@ -2,13 +2,29 @@
 
 @section('content')
     <div class="movie-details">
-        <h1>{{$movie->title}}</h1>
-        <a href="/">Back to Home</a>
-        <div class="card">
-            <img class="card-img-top" src="http://image.tmdb.org/t/p/original//{{$movie->poster_path}}" alt="Card image cap">
-            <div class="card-body">
-                <p class="card-text">{{$movie->overview}}</p>
-                <small class="card-text">Release Date: {{$movie->release_date}}</small>
+        <div class="row">
+            <div class="col">
+                <h1>{{$movie->title}}</h1>
+                <a href="/">Back to Home</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <img src="http://image.tmdb.org/t/p/w500//{{$movie->poster_path}}" alt="Movie poster image">
+            </div>
+            <div class="col-md">
+                <h3>Overview</h3>
+                <p>{{$movie->overview}}</p>
+
+                <h3>Genres</h3>
+                <ul>
+                    @foreach ($movie->genres as $genre)
+                        <li>{{$genre->name}}</li>
+                    @endforeach
+                </ul>
+
+                <h3>Release Date</h3>
+                <p>{{$movie->release_date}}</p>
             </div>
         </div>
     </div>

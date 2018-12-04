@@ -1,38 +1,38 @@
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-        @if($currentPage === 1)
+        @if($pagination->currentPage === 1)
             <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1">Previous</a>
             </li>
             <li class="page-item active">
-                <span class="page-link">{{$currentPage}}<span class="sr-only">(current)</span></span>
+                <span class="page-link">{{$pagination->currentPage}}<span class="sr-only">(current)</span></span>
             </li>
-            <li class="page-item"><a class="page-link" href="/?page={{$nextPage}}">{{$nextPage}}</a></li>
+            <li class="page-item"><a class="page-link" href="{{$pagination->nextPageUrl}}">{{$pagination->nextPage}}</a></li>
             <li class="page-item">
-                <a class="page-link" href="/?page={{$nextPage}}">Next</a>
+                <a class="page-link" href="{{$pagination->nextPageUrl}}">Next</a>
             </li>
-        @elseif ($currentPage === $lastPage)
+        @elseif ($pagination->currentPage === $pagination->lastPage)
             <li class="page-item">
-                <a class="page-link" href="?page={{$previousPage}}" tabindex="-1">Previous</a>
+                <a class="page-link" href="{{$pagination->previousPageUrl}}" tabindex="-1">Previous</a>
             </li>
-            <li class="page-item"><a class="page-link" href="?page={{$previousPage}}">{{$previousPage}}</a></li>
+            <li class="page-item"><a class="page-link" href="{{$pagination->previousPageUrl}}">{{$pagination->previousPage}}</a></li>
             <li class="page-item active">
-                <span class="page-link">{{$currentPage}}<span class="sr-only">(current)</span></span>
+                <span class="page-link">{{$pagination->currentPage}}<span class="sr-only">(current)</span></span>
             </li>
-            <li class="page-item">
-                <a class="page-link disabled" href="#">Next</a>
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Next</a>
             </li>
         @else
             <li class="page-item">
-                <a class="page-link" href="?page={{$previousPage}}" tabindex="-1">Previous</a>
+                <a class="page-link" href="{{$pagination->previousPageUrl}}" tabindex="-1">Previous</a>
             </li>
-            <li class="page-item"><a class="page-link" href="?page={{$previousPage}}">{{$previousPage}}</a></li>
+            <li class="page-item"><a class="page-link" href="{{$pagination->previousPageUrl}}">{{$pagination->previousPage}}</a></li>
             <li class="page-item active">
-                <span class="page-link">{{$currentPage}}<span class="sr-only">(current)</span></span>
+                <span class="page-link">{{$pagination->currentPage}}<span class="sr-only">(current)</span></span>
             </li>
-            <li class="page-item"><a class="page-link" href="/?page={{$nextPage}}">{{$nextPage}}</a></li>
+            <li class="page-item"><a class="page-link" href="{{$pagination->nextPageUrl}}">{{$pagination->nextPage}}</a></li>
             <li class="page-item">
-                <a class="page-link" href="/?page={{$nextPage}}">Next</a>
+            <a class="page-link" href="{{$pagination->nextPageUrl}}">Next</a>
             </li>
         @endif
         

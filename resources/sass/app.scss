@@ -22,4 +22,11 @@ h1 {
 
 .movie-details {
   padding-bottom: 1rem;
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  img {
+    max-width: 500;
+  }
 }

@@ -10,7 +10,11 @@
         @foreach ($chunk as $movie)
         <div class="col-3">
             <a href="/movies/{{$movie->id}}">
+                @if($movie->poster_path !== null)
                 <img class="card-img-top" src="http://image.tmdb.org/t/p/w185//{{$movie->poster_path}}" alt="Movie poster image">
+                @else
+                <img class="card-img-top" src="images/error-poster.jpg" alt="Default movie poster image">
+                @endif
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">{{$movie->title}}</h5>
@@ -22,11 +26,6 @@
     </div>
     @endforeach
 
-    @component('components.pagination', [
-        'requestType' => '/',
-        'previousPage' => $movies->page - 1,
-        'currentPage' => $movies->page,
-        'nextPage' => $movies->page + 1,
-        'lastPage' => $movies->total_pages])
+    @component('components.pagination', ['pagination' => $pagination])
     @endcomponent
 @stop
