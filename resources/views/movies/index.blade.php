@@ -8,7 +8,7 @@
     @foreach (collect($movies->results)->chunk(4) as $chunk)
     <div class="row">
         @foreach ($chunk as $movie)
-        <div class="col-3">
+        <div class="poster col-sm-3 col-xs-12">
             <a href="/movies/{{$movie->id}}">
                 @if($movie->poster_path !== null)
                 <img class="card-img-top" src="http://image.tmdb.org/t/p/w185//{{$movie->poster_path}}" alt="Movie poster image">

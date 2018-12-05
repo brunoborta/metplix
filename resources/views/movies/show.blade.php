@@ -9,10 +9,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md">
+            <div class="col-md-6 col-xs-12">
                 <img src="http://image.tmdb.org/t/p/w500//{{$movie->poster_path}}" alt="Movie poster image">
             </div>
-            <div class="col-md">
+            <div class="col-md-6 col-xs-12">
                 <h3>Overview</h3>
                 <p>{{$movie->overview}}</p>
 

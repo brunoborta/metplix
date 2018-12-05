@@ -9,7 +9,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 .row {
-  padding-bottom: 1rem;
+  .poster {
+    margin-bottom: 1rem;
+  }
 }
 
 a:hover, a:focus {
@@ -20,6 +22,7 @@ h1 {
   padding: 1rem 0;
 }
 
+
 .movie-details {
   padding-bottom: 1rem;
   ul {
@@ -27,6 +30,7 @@ h1 {
     list-style-type: none;
   }
   img {
-    max-width: 500px;
+    width: 100%;
+    padding-bottom: 1rem;
   }
 }

@@ -10466,8 +10466,8 @@ a.text-dark:focus {
   }
 }
 
-.row {
-  padding-bottom: 1rem;
+.row .poster {
+  margin-bottom: 1rem;
 }
 
 a:hover,
@@ -10489,6 +10489,7 @@ h1 {
 }
 
 .movie-details img {
-  max-width: 500px;
+  width: 100%;
+  padding-bottom: 1rem;
 }
 
