@@ -1,0 +1,36 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.row {
+  .poster {
+    margin-bottom: 1rem;
+  }
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+h1 {
+  padding: 1rem 0;
+}
+
+
+.movie-details {
+  padding-bottom: 1rem;
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  img {
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+}
